@@ -1,32 +1,23 @@
 <mat-toolbar color="primary"> 
-  <mat-toolbar-row>
-    <button mat-icon-button="">
-     <mat-icon [matMenuTriggerFor]="appmenu">menu</mat-icon>
-    </button>
-   <mat-menu #appmenu="matMenu" yPosition="below">
-     <button mat-menu-item="">
-        <span></span>
-     </button>
-      <button mat-menu-item="">
-        <span></span>
-      </button>
-      <button mat-menu-item="">
-        <span></span>
-      </button>
-   </mat-menu>
-   <button mat-stroked-button [matMenuTriggerFor]="menu">Menu1</button>
+    
+  <button (click)="sidenav_opened=!sidenav_opened">
+    <mat-icon>menu</mat-icon>
+   </button>
+   <button mat-stroked-button [matMenuTriggerFor]="menu" style="margin-left: 50px;">Menu1</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>Menu Item 1</button>
-  <button mat-menu-item>Menu Item 2</button>
+<button mat-menu-item>Menu Item 1</button>
+<button mat-menu-item>Menu Item 2</button>
 </mat-menu>
-
-   <button mat-stroked-button>Menu2</button>
-   <button mat-stroked-button>Menu3</button>
-  </mat-toolbar-row> 
+<mat-menu #menu="matMenu">
+<button mat-menu-item>Menu Item 1</button>
+<button mat-menu-item>Menu Item 2</button>
+</mat-menu>
+<div>
+<button mat-stroked-button style="margin-right: 50px;margin-left: 50px;">Menu2</button>
+</div>
+<button mat-stroked-button>Menu3</button>
 </mat-toolbar>
-
-
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Menu Item 1</button>
-  <button mat-menu-item>Menu Item 2</button>
-</mat-menu>
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="sidenav_opened" #sidenav mode="side"></mat-sidenav>
+  </mat-sidenav-container>
+  
